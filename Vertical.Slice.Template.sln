@@ -10,22 +10,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9BB0311A-FE2
 		src\Directory.Packages.props = src\Directory.Packages.props
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{C4B80800-5430-4D4E-B473-261157D54CD4}"
-	ProjectSection(SolutionItems) = preProject
-		tests\Directory.Build.props = tests\Directory.Build.props
-		tests\Directory.Packages.props = tests\Directory.Packages.props
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vertical.Slice.Template.EndToEndTests", "tests\Vertical.Slice.Template.EndToEndTests\Vertical.Slice.Template.EndToEndTests.csproj", "{5F41BF51-E13B-48BF-8D81-874FBA9BC961}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vertical.Slice.Template.UnitTests", "tests\Vertical.Slice.Template.UnitTests\Vertical.Slice.Template.UnitTests.csproj", "{4CCD199C-1C58-4C6E-963A-3A37CA9FB532}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vertical.Slice.Template.IntegrationTests", "tests\Vertical.Slice.Template.IntegrationTests\Vertical.Slice.Template.IntegrationTests.csproj", "{7C503960-D3B3-4A19-9742-8D5CA8C84370}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vertical.Slice.Template.ContractTests", "tests\Vertical.Slice.Template.ContractTests\Vertical.Slice.Template.ContractTests.csproj", "{70A7C0CD-C771-4942-BC74-B267AAACFF43}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vertical.Slice.Template.TestsShared", "tests\Vertical.Slice.Template.TestsShared\Vertical.Slice.Template.TestsShared.csproj", "{E3C9B67C-8443-49C9-A6F3-EA099199F66F}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solution-items", "solution-items", "{798579C1-7DEC-47A2-9C18-CA3DBE4A6573}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
@@ -34,7 +18,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solution-items", "solution-
 		package.json = package.json
 		readme.md = readme.md
 		version.json = version.json
-		vertical-slice-template.nuspec = vertical-slice-template.nuspec
 		.dockerignore = .dockerignore
 	EndProjectSection
 EndProject
@@ -42,10 +25,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".config", ".config", "{154A
 	ProjectSection(SolutionItems) = preProject
 		.config\dotnet-tools.json = .config\dotnet-tools.json
 	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vertical.Slice.Template.ClientsTests", "tests\Vertical.Slice.Template.ClientsTests\Vertical.Slice.Template.ClientsTests.csproj", "{4E185D04-8B8D-4BE9-AAE3-5406C703DF83}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vertical.Slice.Template.DependencyTests", "tests\Vertical.Slice.Template.DependencyTests\Vertical.Slice.Template.DependencyTests.csproj", "{A79D441C-D450-474E-9CFC-008335A80B13}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{AEFEEF63-5831-49E5-A7D9-892AF653C32D}"
 	ProjectSection(SolutionItems) = preProject
@@ -87,21 +66,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docker-compose", "docker-co
 		deployments\docker-compose\docker-compose.services.prod.yaml = deployments\docker-compose\docker-compose.services.prod.yaml
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiClients", "ApiClients", "{66D6E224-01FF-4D8F-98C1-CEA3CD2D5F15}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App", "App", "{AF80152C-AF0D-475E-AD69-A7867D1ACA26}"
-	ProjectSection(SolutionItems) = preProject
-		src\App\Dockerfile = src\App\Dockerfile
-		src\App\Dockerfile.dev = src\App\Dockerfile.dev
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{54C91A04-E128-4ADB-9B49-E0FEAC783069}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vertical.Slice.Template", "src\App\Vertical.Slice.Template\Vertical.Slice.Template.csproj", "{AC478225-5EA9-4895-875A-0B01217C4576}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vertical.Slice.Template.Api", "src\App\Vertical.Slice.Template.Api\Vertical.Slice.Template.Api.csproj", "{23F3C3DD-6630-4743-BE50-9BD6F719665E}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "src\Shared\Shared.csproj", "{A5FB3B9E-FF0A-45F4-8D37-080C770A5AB4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Statistics", "src\Statistics\Statistics.csproj", "{A5FB3B9E-FF0A-45F4-8D37-080C770A5AB4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".husky", ".husky", "{727B615D-D77D-4FEF-ADC6-66CA01B922C1}"
 	ProjectSection(SolutionItems) = preProject
@@ -109,70 +74,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".husky", ".husky", "{727B61
 		.husky\pre-commit = .husky\pre-commit
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vertical.Slice.Template.ConnectedServiceClients", "src\ApiClients\Vertical.Slice.Template.ConnectedServiceClients\Vertical.Slice.Template.ConnectedServiceClients.csproj", "{D8209C44-CABE-4663-A2F9-8C77D64982A9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "src\Common\Common.csproj", "{8A47DFF1-D2D1-489C-B246-B300869CB7B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vertical.Slice.Template.KiotaClients", "src\ApiClients\Vertical.Slice.Template.KiotaClients\Vertical.Slice.Template.KiotaClients.csproj", "{0A03D772-C2F6-49FE-8324-39536425FA42}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "configs", "configs", "{D9CDA07C-B645-4E50-98B6-503E7DB084D8}"
-	ProjectSection(SolutionItems) = preProject
-		deployments\configs\otel-collector-config.yaml = deployments\configs\otel-collector-config.yaml
-		deployments\configs\prometheus.yaml = deployments\configs\prometheus.yaml
-		deployments\configs\loki-config.yaml = deployments\configs\loki-config.yaml
-		deployments\configs\tempo.yaml = deployments\configs\tempo.yaml
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "grafana", "grafana", "{5F114827-1A2A-4FD3-A659-ECFB18E0CA46}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "provisioning", "provisioning", "{E38D6E48-0D2E-4985-BE67-B489E8D470F1}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dashboards", "dashboards", "{177833FE-325D-40EB-BAAD-3993B4CF3112}"
-	ProjectSection(SolutionItems) = preProject
-		deployments\configs\grafana\dashboards\aspnet-core-dashboard.json = deployments\configs\grafana\dashboards\aspnet-core-dashboard.json
-		deployments\configs\grafana\dashboards\aspnet-core-endpoints.json = deployments\configs\grafana\dashboards\aspnet-core-endpoints.json
-		deployments\configs\grafana\dashboards\node-exporter.json = deployments\configs\grafana\dashboards\node-exporter.json
-		deployments\configs\grafana\dashboards\postgresql.json = deployments\configs\grafana\dashboards\postgresql.json
-		deployments\configs\grafana\dashboards\rabbitmq.json = deployments\configs\grafana\dashboards\rabbitmq.json
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "datasources", "datasources", "{96925CBE-84BF-44F0-9285-512105E612A2}"
-	ProjectSection(SolutionItems) = preProject
-		deployments\configs\grafana\provisioning\datasources\datasource.yml = deployments\configs\grafana\provisioning\datasources\datasource.yml
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dashboards", "dashboards", "{18803B75-9D78-4438-BED7-3AC9CB9F5835}"
-	ProjectSection(SolutionItems) = preProject
-		deployments\configs\grafana\provisioning\dashboards\dashboard.yml = deployments\configs\grafana\provisioning\dashboards\dashboard.yml
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "k8s", "k8s", "{99A01789-D45F-483B-9418-E94181E8C199}"
-	ProjectSection(SolutionItems) = preProject
-		deployments\k8s\aspire-dashboard.yaml = deployments\k8s\aspire-dashboard.yaml
-		deployments\k8s\grafana.yaml = deployments\k8s\grafana.yaml
-		deployments\k8s\jaeger.yaml = deployments\k8s\jaeger.yaml
-		deployments\k8s\otel-collector.yaml = deployments\k8s\otel-collector.yaml
-		deployments\k8s\postgresql.yaml = deployments\k8s\postgresql.yaml
-		deployments\k8s\prometheus.yaml = deployments\k8s\prometheus.yaml
-		deployments\k8s\rabbitmq.yaml = deployments\k8s\rabbitmq.yaml
-		deployments\k8s\redis.yaml = deployments\k8s\redis.yaml
-		deployments\k8s\zipkin.yaml = deployments\k8s\zipkin.yaml
-		deployments\k8s\elasticsearch.yaml = deployments\k8s\elasticsearch.yaml
-		deployments\k8s\kibana.yaml = deployments\k8s\kibana.yaml
-		deployments\k8s\loki.yaml = deployments\k8s\loki.yaml
-		deployments\k8s\node-exporter.yaml = deployments\k8s\node-exporter.yaml
-		deployments\k8s\tempo.yaml = deployments\k8s\tempo.yaml
-		deployments\k8s\vertical-slice-template-api.yaml = deployments\k8s\vertical-slice-template-api.yaml
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "config-maps", "config-maps", "{8370F7CF-C190-4982-8F1D-3A7206326BDD}"
-	ProjectSection(SolutionItems) = preProject
-		deployments\k8s\config-maps\otel-collector-configmap.yaml = deployments\k8s\config-maps\otel-collector-configmap.yaml
-		deployments\k8s\config-maps\postgres-configmap.yaml = deployments\k8s\config-maps\postgres-configmap.yaml
-		deployments\k8s\config-maps\prometheus-configmap.yaml = deployments\k8s\config-maps\prometheus-configmap.yaml
-		deployments\k8s\config-maps\tempo-configmap.yaml = deployments\k8s\config-maps\tempo-configmap.yaml
-		deployments\k8s\config-maps\loki-configmap.yaml = deployments\k8s\config-maps\loki-configmap.yaml
-		deployments\k8s\config-maps\grafana-dashboards-configmap.yaml = deployments\k8s\config-maps\grafana-dashboards-configmap.yaml
-		deployments\k8s\config-maps\grafana-provisioning-configmap.yaml = deployments\k8s\config-maps\grafana-provisioning-configmap.yaml
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Startup", "src\Startup\Startup.csproj", "{B16698D0-4578-4C05-9280-124FF48AEB93}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -183,86 +87,30 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{5F41BF51-E13B-48BF-8D81-874FBA9BC961} = {C4B80800-5430-4D4E-B473-261157D54CD4}
-		{4CCD199C-1C58-4C6E-963A-3A37CA9FB532} = {C4B80800-5430-4D4E-B473-261157D54CD4}
-		{7C503960-D3B3-4A19-9742-8D5CA8C84370} = {C4B80800-5430-4D4E-B473-261157D54CD4}
-		{70A7C0CD-C771-4942-BC74-B267AAACFF43} = {C4B80800-5430-4D4E-B473-261157D54CD4}
-		{E3C9B67C-8443-49C9-A6F3-EA099199F66F} = {C4B80800-5430-4D4E-B473-261157D54CD4}
 		{154A55C1-CE45-463D-B411-816C702D6A25} = {798579C1-7DEC-47A2-9C18-CA3DBE4A6573}
-		{4E185D04-8B8D-4BE9-AAE3-5406C703DF83} = {C4B80800-5430-4D4E-B473-261157D54CD4}
-		{A79D441C-D450-474E-9CFC-008335A80B13} = {C4B80800-5430-4D4E-B473-261157D54CD4}
 		{AEFEEF63-5831-49E5-A7D9-892AF653C32D} = {798579C1-7DEC-47A2-9C18-CA3DBE4A6573}
 		{ED6C6F59-8A39-4D7D-BB93-888AA486AFE9} = {AEFEEF63-5831-49E5-A7D9-892AF653C32D}
 		{268E2B03-D9F4-4D31-84BA-6D1DC250E894} = {798579C1-7DEC-47A2-9C18-CA3DBE4A6573}
 		{3A68A53A-1E76-49DE-A622-569267333288} = {268E2B03-D9F4-4D31-84BA-6D1DC250E894}
 		{9DF99E09-AEC5-4F44-BC7E-CB16EF796431} = {798579C1-7DEC-47A2-9C18-CA3DBE4A6573}
 		{F3FCF437-0EF6-4149-AA20-46C787B6FCB1} = {9DF99E09-AEC5-4F44-BC7E-CB16EF796431}
-		{66D6E224-01FF-4D8F-98C1-CEA3CD2D5F15} = {9BB0311A-FE23-4C8D-B7C0-E8CD49FA3D20}
-		{AF80152C-AF0D-475E-AD69-A7867D1ACA26} = {9BB0311A-FE23-4C8D-B7C0-E8CD49FA3D20}
-		{54C91A04-E128-4ADB-9B49-E0FEAC783069} = {9BB0311A-FE23-4C8D-B7C0-E8CD49FA3D20}
-		{AC478225-5EA9-4895-875A-0B01217C4576} = {AF80152C-AF0D-475E-AD69-A7867D1ACA26}
-		{23F3C3DD-6630-4743-BE50-9BD6F719665E} = {AF80152C-AF0D-475E-AD69-A7867D1ACA26}
-		{A5FB3B9E-FF0A-45F4-8D37-080C770A5AB4} = {54C91A04-E128-4ADB-9B49-E0FEAC783069}
 		{727B615D-D77D-4FEF-ADC6-66CA01B922C1} = {798579C1-7DEC-47A2-9C18-CA3DBE4A6573}
-		{D8209C44-CABE-4663-A2F9-8C77D64982A9} = {66D6E224-01FF-4D8F-98C1-CEA3CD2D5F15}
-		{0A03D772-C2F6-49FE-8324-39536425FA42} = {66D6E224-01FF-4D8F-98C1-CEA3CD2D5F15}
-		{D9CDA07C-B645-4E50-98B6-503E7DB084D8} = {9DF99E09-AEC5-4F44-BC7E-CB16EF796431}
-		{5F114827-1A2A-4FD3-A659-ECFB18E0CA46} = {D9CDA07C-B645-4E50-98B6-503E7DB084D8}
-		{E38D6E48-0D2E-4985-BE67-B489E8D470F1} = {5F114827-1A2A-4FD3-A659-ECFB18E0CA46}
-		{177833FE-325D-40EB-BAAD-3993B4CF3112} = {5F114827-1A2A-4FD3-A659-ECFB18E0CA46}
-		{96925CBE-84BF-44F0-9285-512105E612A2} = {E38D6E48-0D2E-4985-BE67-B489E8D470F1}
-		{18803B75-9D78-4438-BED7-3AC9CB9F5835} = {E38D6E48-0D2E-4985-BE67-B489E8D470F1}
-		{99A01789-D45F-483B-9418-E94181E8C199} = {9DF99E09-AEC5-4F44-BC7E-CB16EF796431}
-		{8370F7CF-C190-4982-8F1D-3A7206326BDD} = {99A01789-D45F-483B-9418-E94181E8C199}
+		{A5FB3B9E-FF0A-45F4-8D37-080C770A5AB4} = {9BB0311A-FE23-4C8D-B7C0-E8CD49FA3D20}
+		{8A47DFF1-D2D1-489C-B246-B300869CB7B8} = {9BB0311A-FE23-4C8D-B7C0-E8CD49FA3D20}
+		{B16698D0-4578-4C05-9280-124FF48AEB93} = {9BB0311A-FE23-4C8D-B7C0-E8CD49FA3D20}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5F41BF51-E13B-48BF-8D81-874FBA9BC961}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5F41BF51-E13B-48BF-8D81-874FBA9BC961}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5F41BF51-E13B-48BF-8D81-874FBA9BC961}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5F41BF51-E13B-48BF-8D81-874FBA9BC961}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4CCD199C-1C58-4C6E-963A-3A37CA9FB532}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4CCD199C-1C58-4C6E-963A-3A37CA9FB532}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4CCD199C-1C58-4C6E-963A-3A37CA9FB532}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4CCD199C-1C58-4C6E-963A-3A37CA9FB532}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7C503960-D3B3-4A19-9742-8D5CA8C84370}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7C503960-D3B3-4A19-9742-8D5CA8C84370}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7C503960-D3B3-4A19-9742-8D5CA8C84370}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7C503960-D3B3-4A19-9742-8D5CA8C84370}.Release|Any CPU.Build.0 = Release|Any CPU
-		{70A7C0CD-C771-4942-BC74-B267AAACFF43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{70A7C0CD-C771-4942-BC74-B267AAACFF43}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{70A7C0CD-C771-4942-BC74-B267AAACFF43}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{70A7C0CD-C771-4942-BC74-B267AAACFF43}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E3C9B67C-8443-49C9-A6F3-EA099199F66F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E3C9B67C-8443-49C9-A6F3-EA099199F66F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E3C9B67C-8443-49C9-A6F3-EA099199F66F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E3C9B67C-8443-49C9-A6F3-EA099199F66F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4E185D04-8B8D-4BE9-AAE3-5406C703DF83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4E185D04-8B8D-4BE9-AAE3-5406C703DF83}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4E185D04-8B8D-4BE9-AAE3-5406C703DF83}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4E185D04-8B8D-4BE9-AAE3-5406C703DF83}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A79D441C-D450-474E-9CFC-008335A80B13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A79D441C-D450-474E-9CFC-008335A80B13}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A79D441C-D450-474E-9CFC-008335A80B13}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A79D441C-D450-474E-9CFC-008335A80B13}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AC478225-5EA9-4895-875A-0B01217C4576}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AC478225-5EA9-4895-875A-0B01217C4576}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AC478225-5EA9-4895-875A-0B01217C4576}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AC478225-5EA9-4895-875A-0B01217C4576}.Release|Any CPU.Build.0 = Release|Any CPU
-		{23F3C3DD-6630-4743-BE50-9BD6F719665E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{23F3C3DD-6630-4743-BE50-9BD6F719665E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{23F3C3DD-6630-4743-BE50-9BD6F719665E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{23F3C3DD-6630-4743-BE50-9BD6F719665E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A5FB3B9E-FF0A-45F4-8D37-080C770A5AB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A5FB3B9E-FF0A-45F4-8D37-080C770A5AB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A5FB3B9E-FF0A-45F4-8D37-080C770A5AB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A5FB3B9E-FF0A-45F4-8D37-080C770A5AB4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D8209C44-CABE-4663-A2F9-8C77D64982A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D8209C44-CABE-4663-A2F9-8C77D64982A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D8209C44-CABE-4663-A2F9-8C77D64982A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D8209C44-CABE-4663-A2F9-8C77D64982A9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0A03D772-C2F6-49FE-8324-39536425FA42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0A03D772-C2F6-49FE-8324-39536425FA42}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0A03D772-C2F6-49FE-8324-39536425FA42}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0A03D772-C2F6-49FE-8324-39536425FA42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A47DFF1-D2D1-489C-B246-B300869CB7B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A47DFF1-D2D1-489C-B246-B300869CB7B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A47DFF1-D2D1-489C-B246-B300869CB7B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A47DFF1-D2D1-489C-B246-B300869CB7B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B16698D0-4578-4C05-9280-124FF48AEB93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B16698D0-4578-4C05-9280-124FF48AEB93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B16698D0-4578-4C05-9280-124FF48AEB93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B16698D0-4578-4C05-9280-124FF48AEB93}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
