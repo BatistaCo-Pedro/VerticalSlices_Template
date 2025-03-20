@@ -1,11 +1,4 @@
-using System.Reflection;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Http.HttpResults;
-using Microsoft.AspNetCore.Http.Metadata;
-using Microsoft.AspNetCore.Mvc;
-
-namespace Statistics.Web.ProblemDetail.HttpResults;
+namespace Common.Presentation.ProblemDetail.HttpResults;
 
 public class InternalHttpProblemResult
     : IResult,

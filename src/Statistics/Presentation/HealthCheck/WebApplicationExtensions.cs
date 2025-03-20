@@ -1,10 +1,4 @@
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Diagnostics.HealthChecks;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Diagnostics.HealthChecks;
-using Microsoft.Extensions.Hosting;
-
-namespace Statistics.HealthCheck;
+namespace Statistics.Presentation.HealthCheck;
 
 public static class WebApplicationExtensions
 {

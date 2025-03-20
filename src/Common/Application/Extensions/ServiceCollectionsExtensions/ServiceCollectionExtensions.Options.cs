@@ -1,10 +1,4 @@
-using System.Reflection;
-using System.Runtime.CompilerServices;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.DependencyInjection.Extensions;
-using Microsoft.Extensions.Options;
-
-namespace Statistics.Core.Extensions.ServiceCollectionsExtensions;
+namespace Common.Application.Extensions.ServiceCollectionsExtensions;
 
 public static partial class ServiceCollectionExtensions
 {
@@ -35,7 +29,7 @@ public static partial class ServiceCollectionExtensions
     {
         var key = typeof(T).Name;
 
-        return AddConfigurationOptions(services, key, configurator);
+        return services.AddConfigurationOptions(key, configurator);
     }
 
     public static IServiceCollection AddValidationOptions<T>(
@@ -46,7 +40,7 @@ public static partial class ServiceCollectionExtensions
     {
         var key = typeof(T).Name;
 
-        return AddValidatedOptions(services, key, RequiredConfigurationValidator.Validate, configurator);
+        return services.AddValidatedOptions(key, RequiredConfigurationValidator.Validate, configurator);
     }
 
     public static IServiceCollection AddValidationOptions<T>(
@@ -56,8 +50,7 @@ public static partial class ServiceCollectionExtensions
     )
         where T : class
     {
-        return AddValidatedOptions(
-            services,
+        return services.AddValidatedOptions(
             key ?? typeof(T).Name,
             RequiredConfigurationValidator.Validate,
             configurator
@@ -112,7 +105,7 @@ public static class RequiredConfigurationValidator
             var propertyValue = requiredProperty.GetValue(arg);
             if (propertyValue is null)
             {
-                throw new System.Exception($"Required property '{requiredProperty.Name}' was null");
+                throw new Exception($"Required property '{requiredProperty.Name}' was null");
             }
         }
 

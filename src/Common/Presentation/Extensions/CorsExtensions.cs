@@ -1,8 +1,6 @@
-using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.DependencyInjection;
-using Statistics.Core.Extensions.ServiceCollectionsExtensions;
+using Common.Application.Extensions.ServiceCollectionsExtensions;
 
-namespace Statistics.Web.Extensions;
+namespace Common.Presentation.Extensions;
 
 // https://learn.microsoft.com/en-us/aspnet/core/security/cors
 public static class Extensions

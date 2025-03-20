@@ -1,6 +1,4 @@
-using Microsoft.Extensions.Hosting;
-
-namespace Statistics.Web.Extensions;
+namespace Common.Presentation.Extensions;
 
 public static class HostEnvironmentExtensions
 {

@@ -1,10 +1,4 @@
-using System.Reflection;
-using Common.Presentation.ProblemDetail;
-using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.DependencyInjection.Extensions;
-
-namespace Statistics.Web.ProblemDetail;
+namespace Common.Presentation.ProblemDetail;
 
 public static class RegistrationExtensions
 {

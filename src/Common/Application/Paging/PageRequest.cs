@@ -1,5 +1,3 @@
-using Common.Application.Abstractions.Paging;
-
 namespace Common.Application.Paging;
 
 public record PageRequest : IPageRequest

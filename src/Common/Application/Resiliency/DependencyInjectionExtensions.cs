@@ -1,4 +1,5 @@
 using System.Net;
+using Common.Application.Extensions.ServiceCollectionsExtensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Http.Resilience;
@@ -8,8 +9,6 @@ using Polly.CircuitBreaker;
 using Polly.Retry;
 using Polly.Timeout;
 using Polly.Wrap;
-using Statistics.Core.Extensions;
-using Statistics.Core.Extensions.ServiceCollectionsExtensions;
 using Statistics.Resiliency.Options;
 
 namespace Statistics.Resiliency;

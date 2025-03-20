@@ -1,9 +1,4 @@
-using Humanizer;
-using Microsoft.AspNetCore.Diagnostics;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-
-namespace Statistics.Web.ProblemDetail;
+namespace Common.Presentation.ProblemDetail;
 
 public class ProblemDetailsService(IEnumerable<IProblemDetailsWriter> writers) : IProblemDetailsService
 {

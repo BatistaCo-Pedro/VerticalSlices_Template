@@ -1,7 +1,7 @@
 using System.Net;
+using Common.Application.Extensions.ServiceCollectionsExtensions;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
-using Statistics.Core.Extensions.ServiceCollectionsExtensions;
 using Statistics.Resiliency.Options;
 
 namespace Statistics.Resiliency.HttpClient;
@@ -16,8 +16,6 @@ public static class HttpClientExtensions
         where TImplementation : class, TClient
         where TClientOptions : HttpClientOptions, new()
     {
-        // https://github.com/App-vNext/Polly/wiki/Polly-and-HttpClientFactory
-        // https://github.com/App-vNext/Polly/wiki/PolicyRegistry
         services.AddValidatedOptions<TClientOptions>();
 
         services
@@ -41,13 +39,6 @@ public static class HttpClientExtensions
                 AutomaticDecompression =
                     DecompressionMethods.Brotli | DecompressionMethods.Deflate | DecompressionMethods.GZip,
             });
-        // .AddHttpMessageHandler(sp =>
-        // {
-        //     return new CorrelationIdDelegatingHandler(
-        //         sp.GetService<ICorrelationContextAccessor>(),
-        //         sp.GetService<IOptions<CorrelationIdOptions>>()
-        //     );
-        // };
 
         return services;
     }
@@ -69,11 +60,8 @@ public static class HttpClientExtensions
     )
         where TClientOptions : HttpClientOptions, new()
     {
-        // https://github.com/App-vNext/Polly/wiki/Polly-and-HttpClientFactory#step-2-configure-a-client-with-polly-policies-in-startup
         services.AddValidatedOptions<TClientOptions>();
 
-        // https://learn.microsoft.com/en-us/aspnet/core/fundamentals/http-requests#named-clients
-        // https://learn.microsoft.com/en-us/aspnet/core/fundamentals/http-requests?view=aspnetcore-7.0#createclient
         services
             .AddHttpClient(clientName)
             .ConfigureHttpClient(

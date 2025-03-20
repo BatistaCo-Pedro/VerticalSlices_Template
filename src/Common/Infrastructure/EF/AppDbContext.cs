@@ -1,5 +1,3 @@
-using App.Server.Notification.Application.Abstractions;
-
 namespace Common.Infrastructure.EF;
 
 public abstract class AppDbContext(DbContextOptions options) : DbContext(options), IUnitOfWork

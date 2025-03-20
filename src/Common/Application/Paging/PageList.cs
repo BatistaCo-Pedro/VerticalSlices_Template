@@ -1,6 +1,4 @@
-using Common.Application.Abstractions.Paging;
-
-namespace Statistics.Core.Paging;
+namespace Common.Application.Paging;
 
 public record PageList<T>(IReadOnlyList<T> Items, int PageNumber, int PageSize, int TotalCount) : IPageList<T>
     where T : class

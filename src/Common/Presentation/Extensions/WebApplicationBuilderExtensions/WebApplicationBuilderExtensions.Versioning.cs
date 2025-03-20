@@ -1,8 +1,4 @@
-using Asp.Versioning;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.DependencyInjection;
-
-namespace Statistics.Web.Extensions.WebApplicationBuilderExtensions;
+namespace Common.Presentation.Extensions.WebApplicationBuilderExtensions;
 
 public static partial class WebApplicationBuilderExtensions
 {

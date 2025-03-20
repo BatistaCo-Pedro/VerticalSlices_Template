@@ -1,6 +1,4 @@
-﻿using Microsoft.Extensions.Configuration;
-
-namespace Statistics.Core.Extensions;
+﻿namespace Common.Application.Extensions;
 
 /// <summary>
 /// Static helper class for <see cref="IConfiguration"/>.

@@ -1,11 +1,4 @@
-using System.Linq.Expressions;
-using Common.Application.Abstractions.Paging;
-using Microsoft.EntityFrameworkCore;
-using Sieve.Models;
-using Sieve.Services;
-using Statistics.Core.Paging;
-
-namespace Statistics.Core.Extensions;
+namespace Common.Application.Extensions;
 
 // we should not relate to Ef or Mongo here, and we should design as general with IQueryable to work with any providers
 public static class QueryableExtensions

@@ -1,4 +1,4 @@
-namespace App.Server.Notification.Application.Abstractions;
+namespace Common.Application.Abstractions;
 
 /// <summary>
 /// Interface representing a unit of work.
@@ -48,7 +48,7 @@ public interface IUnitOfWork : IDisposable
     /// <param name="action">The action to execute.</param>
     /// <param name="loggingContext">Context for logging information.</param>
     /// <returns>A result with success information about the transaction.</returns>
-    Result UseTransaction(
+    Result.Result UseTransaction(
         Action action,
         [CallerMemberName] string loggingContext = DefaultLoggingContext
     );
@@ -87,7 +87,7 @@ public interface IUnitOfWork : IDisposable
     /// A task that represents the asynchronous result with information about the success of the transaction.
     /// </returns>
     /// <exception cref="OperationCanceledException">If the <see cref="CancellationToken" /> is canceled.</exception>
-    Task<Result> UseTransactionAsync(
+    Task<Result.Result> UseTransactionAsync(
         Func<Task> action,
         CancellationToken cancellationToken = default,
         [CallerMemberName] string loggingContext = DefaultLoggingContext

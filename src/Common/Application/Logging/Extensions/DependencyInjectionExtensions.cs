@@ -1,3 +1,5 @@
+using Common.Application.Extensions;
+using Common.Application.Extensions.ServiceCollectionsExtensions;
 using Elastic.Channels;
 using Elastic.Ingest.Elasticsearch;
 using Elastic.Ingest.Elasticsearch.DataStreams;
@@ -10,8 +12,6 @@ using Serilog.Exceptions.Core;
 using Serilog.Settings.Configuration;
 using Serilog.Sinks.Grafana.Loki;
 using Serilog.Sinks.Spectre;
-using Statistics.Core.Extensions;
-using Statistics.Core.Extensions.ServiceCollectionsExtensions;
 
 namespace Statistics.Logging.Extensions;
 
@@ -29,11 +29,6 @@ public static class DependencyInjectionExtensions
         // add option to the dependency injection
         builder.Services.AddConfigurationOptions<SerilogOptions>(opt => configurator?.Invoke(opt));
 
-        // https://github.com/serilog/serilog-extensions-hosting
-        // https://github.com/serilog/serilog-aspnetcore#two-stage-initialization
-        // https://stackoverflow.com/a/78467358
-        // - Routes framework log messages through Serilog - get other sinks from top level definition
-        // - For preventing duplicate write logs by .net default logs provider we should remove them for serilog because we enabled `writeToProviders=true`
         builder.Logging.ClearProviders();
         builder.Services.AddSerilog(
             (sp, loggerConfiguration) =>
@@ -44,9 +39,6 @@ public static class DependencyInjectionExtensions
                     new ConfigurationReaderOptions { SectionName = nameof(SerilogOptions) }
                 );
 
-                // The downside of initializing Serilog in top level is that services from the ASP.NET Core host, including the appsettings.json configuration and dependency injection, aren't available yet.
-                // setup sinks that related to `configuration` here instead of top level serilog configuration
-                // https://github.com/serilog/serilog-settings-configuration
                 loggerConfiguration.ReadFrom.Configuration(
                     builder.Configuration,
                     new ConfigurationReaderOptions { SectionName = nameof(SerilogOptions) }
@@ -62,20 +54,15 @@ public static class DependencyInjectionExtensions
 
                 if (serilogOptions.UseConsole)
                 {
-                    // https://github.com/serilog/serilog-sinks-async
-                    // https://github.com/lucadecamillis/serilog-sinks-spectre
                     loggerConfiguration.WriteTo.Async(writeTo =>
                         writeTo.Spectre(outputTemplate: serilogOptions.LogTemplate)
                     );
                 }
 
-                // https://github.com/serilog/serilog-sinks-async
                 if (!string.IsNullOrEmpty(serilogOptions.ElasticSearchUrl))
                 {
-                    // elasticsearch sink internally is async
-                    // https://www.nuget.org/packages/Elastic.Serilog.Sinks
                     loggerConfiguration.WriteTo.Elasticsearch(
-                        new[] { new Uri(serilogOptions.ElasticSearchUrl) },
+                        [new Uri(serilogOptions.ElasticSearchUrl),],
                         opts =>
                         {
                             opts.DataStream = new DataStreamName(
@@ -97,16 +84,14 @@ public static class DependencyInjectionExtensions
                         }
                     );
                 }
-
-                // https://github.com/serilog-contrib/serilog-sinks-grafana-loki
+                
                 if (!string.IsNullOrEmpty(serilogOptions.GrafanaLokiUrl))
                 {
                     loggerConfiguration.WriteTo.GrafanaLoki(
                         serilogOptions.GrafanaLokiUrl,
-                        new[]
-                        {
+                        [
                             new LokiLabel { Key = "service", Value = "vertical-slice-template" },
-                        },
+                        ],
                         ["app"]
                     );
                 }
@@ -129,12 +114,7 @@ public static class DependencyInjectionExtensions
                     );
                 }
             },
-            true,
-            // https://stackoverflow.com/a/78467358/581476
-            // - I don't want to use `serilog-sinks-opentelemetry` package because I want to use OpenTelemetry `builder.Logging.AddOpenTelemetry` and its capabilities like config multiple exporters by code.
-            // - For sending logs to OpenTelemetry we use `builder.Logging.AddOpenTelemetry` and it works with .net builtin logging providers (ILoggerProviders) but serilog by default doesn't send logs to
-            //   these providers and as a result serilog can't send telemetry logs, to enable it we should use `writeToProviders` in Serilog.
-            // - By default, `Serilog` does not write events to `ILoggerProviders` registered through the `Microsoft.Extensions.Logging` API. Normally, equivalent Serilog sinks are used in place of providers. Specify true to write events to all providers.
+            preserveStaticLogger: true,
             writeToProviders: serilogOptions.ExportLogsToOpenTelemetry
         );
 

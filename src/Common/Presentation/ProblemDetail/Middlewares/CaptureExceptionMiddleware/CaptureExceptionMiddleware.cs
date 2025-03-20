@@ -1,8 +1,4 @@
-using Microsoft.AspNetCore.Diagnostics;
-using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Logging;
-
-namespace Statistics.Web.ProblemDetail.Middlewares.CaptureExceptionMiddleware;
+namespace Common.Presentation.ProblemDetail.Middlewares.CaptureExceptionMiddleware;
 
 public class CaptureExceptionMiddleware
 {

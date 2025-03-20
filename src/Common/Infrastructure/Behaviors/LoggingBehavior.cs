@@ -1,5 +1,3 @@
-using System.Diagnostics;
-
 namespace Common.Infrastructure.Behaviors;
 
 public class LoggingBehavior<TRequest, TResponse>

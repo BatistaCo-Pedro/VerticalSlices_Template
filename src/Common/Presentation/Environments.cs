@@ -1,4 +1,4 @@
-namespace Statistics.Web;
+namespace Common.Presentation;
 
 public static class Environments
 {
